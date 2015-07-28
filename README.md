@@ -83,7 +83,7 @@ Add a new entity relationship to the user's Web Profile.
 #### Parameters
 ***PAYLOAD*** - *Object*: required fields that allow a device to be added to the user's Web Profile
 - **key** - *String*: the public key of the new entity
-- **profile** - *String*: the Web Profile id of the entity to add
+- **entity** - *String*: the Web Profile id of the entity to add
 - **primaryFactor** - *Object*: the primary auth factor required to do escalated writes to the user's Web Profile object.
 
 #### Returns
@@ -96,7 +96,7 @@ Remove an entity from having relationship-granted access to, and presence on, th
 
 #### Parameters
 ***PAYLOAD*** - *Object*: required fields that allow a device to be added to the user's Web Profile
-- **key** - *String*: the public key of the new entity
+- **entity** - *String*: the Web Profile id of the entity to add
 - **primaryFactor** - *Object*: the primary auth factor required to do escalated writes to the user's Web Profile object.
 
 #### Returns
