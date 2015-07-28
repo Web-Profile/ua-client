@@ -6,6 +6,11 @@ A provider agnostic client User Agent library for working with the blockchain-ba
 
 ### webprofile.setProvider(***ENDPOINT***);
 
+Set the UA Service provider the UA Client calls are sent to.
+
+#### Parameters
+***ENDPOINT*** - *URL*: the location of the UA Service provider.
+
 ### webprofile.createProfile(***PROFILE_ID***, ***PAYLOAD***);
 
 Create a new Web Profile id on the blockchain and generate a Web Profile object on the datastore.
@@ -20,6 +25,10 @@ Create a new Web Profile id on the blockchain and generate a Web Profile object 
 ***Promise*** - *Object*: fulfilled when the UA Service successfully preorders, registers, and creates a Web Profile id and linked datastore object
 
 ### webprofile.getProfile(***PROFILE_ID***);
+
+Retrieve the object associated with a provided Web Profile ID.
+
+#### Parameters
 ***PROFILE_ID*** - *String*: the Web Profile id the user wants to connect a device to.
 
 #### Returns
@@ -27,6 +36,10 @@ Create a new Web Profile id on the blockchain and generate a Web Profile object 
 ***Promise*** - *Object*: fulfilled when the UA Service successfully returns the Web Profile linked to the provided Web Profile ID
 
 ### webprofile.addDevice(***PROFILE_ID***, ***PAYLOAD***);
+
+Add a new, trusted device to the user's Web Profile.
+
+#### Parameters
 ***PROFILE_ID*** - *String*: the Web Profile id the user wants to connect a device to.
 ***PAYLOAD*** - *Object*: required fields that allow a device to be added to the user's Web Profile.
 - **key** - *String*: the public key of the new device to add to the Connections object.
@@ -37,7 +50,25 @@ Create a new Web Profile id on the blockchain and generate a Web Profile object 
 
 ***Promise*** - *Object*: fulfilled when the UA Service successfully adds the device to the Web Profile of the user.
 
+### webprofile.removeDevice(***PROFILE_ID***, ***PAYLOAD***);
+
+Remove a device from being able to issue commands and access privileged aspects of a user's Web Profile.
+
+#### Parameters
+***PROFILE_ID*** - *String*: the Web Profile id the user wants to connect a device to.
+***PAYLOAD*** - *Object*: required fields that allow a device to be added to the user's Web Profile.
+- **key** - *String*: the public key of the new device to add to the Connections object.
+- **primaryFactor** - *Object*: the primary auth factor required to do escalated writes to the user's Web Profile object.
+
+#### Returns
+
+***Promise*** - *Object*: fulfilled when the UA Service successfully adds the device to the Web Profile of the user.
+
 ### webprofile.addRelationship(***PROFILE_ID***, ***PAYLOAD***);
+
+Add a new entity relationship to the user's Web Profile.
+
+#### Parameters
 ***PROFILE_ID*** - *String*: the Web Profile id the user wants to add to its Connections object
 ***PAYLOAD*** - *Object*: required fields that allow a device to be added to the user's Web Profile
 - **key** - *String*: the public key of the new entity
@@ -48,7 +79,25 @@ Create a new Web Profile id on the blockchain and generate a Web Profile object 
 
 ***Promise*** - *Object*: fulfilled when the UA Service successfully adds the device to the Web Profile of the user
 
+### webprofile.removeRelationship(***PROFILE_ID***, ***PAYLOAD***);
+
+Remove an entity from having relationship-granted access to, and presence on, the user's Web Profile.
+
+#### Parameters
+***PROFILE_ID*** - *String*: the Web Profile id the user wants to add to its Connections object
+***PAYLOAD*** - *Object*: required fields that allow a device to be added to the user's Web Profile
+- **key** - *String*: the public key of the new entity
+- **primaryFactor** - *Object*: the primary auth factor required to do escalated writes to the user's Web Profile object.
+
+#### Returns
+
+***Promise*** - *Object*: fulfilled when the UA Service successfully adds the device to the Web Profile of the user
+
 ### webprofile.configureProperty(***PROFILE_ID***, ***PAYLOAD***);
+
+Configure various options specific to a Web Profile property.
+
+#### Parameters
 ***PROFILE_ID*** - *String*: the Web Profile id the user wants to connect a device to
 ***PAYLOAD*** - *Object*: required fields that allow a device to be added to the user's Web Profile
 - **encrypt** - *Boolean*: option to encrypt this field when written by the UA Service
@@ -59,6 +108,10 @@ Create a new Web Profile id on the blockchain and generate a Web Profile object 
 ***Promise*** - *Object*: fulfilled when the UA Service successfully configures the property on the user's Web Profile
 
 ### webprofile.setProperty(***PROFILE_ID***, ***PROPERTY***, ***VALUE***);
+
+Set a property of the user's Web Profile.
+
+#### Parameters
 ***PROFILE_ID*** - *String*: the Web Profile id the user wants to connect a device to
 ***PROPERTY*** - *String*: the property to be set
 ***VALUE*** - *String*: the value to assign the property
@@ -68,6 +121,10 @@ Create a new Web Profile id on the blockchain and generate a Web Profile object 
 ***Promise*** - *Object*: fulfilled when the UA Service successfully updates the property on the user's Web Profile
 
 ### webprofile.removeProperty(***PROFILE_ID***, ***PROPERTY***);
+
+Remove a property from the user's Web Profile.
+
+#### Parameters
 ***PROFILE_ID*** - *String*: the Web Profile id the user wants to connect a device to
 ***PROPERTY*** - *String*: the property to be removed
 
