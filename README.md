@@ -31,7 +31,8 @@ Create a new Web Profile id on the blockchain and generate a Web Profile object 
 #### Parameters
 ***PROFILE_ID*** - *String*: the Web Profile id to preorder and register with the blockchain.
 ***PAYLOAD*** - *Object*: various preferences for how interaction with the UA service should function.
-- **factors** - *Object*: the auth factors to require for client-based invocation of Web Profile actions. Minimum of two factors must be provided can be `password`, `pin`, others TBD.
+- **primaryFactor** - *Object*: the primary auth factor that is required to connect entities and devices. Can be a `password`, `pin`, others TBD.
+- **secondaryFactors** - *Object*: additional auth factors required to regenerate private key. Must pass at lease one secondary factor, but can add more at user election. Secondary factors can be `password`, `pin`, others TBD.
 
 #### Returns
 
