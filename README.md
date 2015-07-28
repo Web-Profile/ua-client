@@ -4,14 +4,14 @@ A provider agnostic client User Agent library for working with the blockchain-ba
 
 ## API
 
-### webprofile.setProvider(***ENDPOINT***);
+### webprofile.setProvider(*ENDPOINT*);
 
 Set the UA Service provider the UA Client calls are sent to.
 
 #### Parameters
 ***ENDPOINT*** - *URL*: the location of the UA Service provider.
 
-### webprofile.createProfile(***PROFILE_ID***, ***PAYLOAD***);
+### webprofile.createProfile(*PROFILE_ID*, *PAYLOAD*);
 
 Create a new Web Profile id on the blockchain and generate a Web Profile object on the datastore.
 
@@ -24,7 +24,7 @@ Create a new Web Profile id on the blockchain and generate a Web Profile object 
 
 ***Promise*** - *Object*: fulfilled when the UA Service successfully preorders, registers, and creates a Web Profile id and linked datastore object
 
-### webprofile.getProfile(***PROFILE_ID***);
+### webprofile.getProfile(*PROFILE_ID*);
 
 Retrieve the object associated with a provided Web Profile ID.
 
@@ -35,7 +35,7 @@ Retrieve the object associated with a provided Web Profile ID.
 
 ***Promise*** - *Object*: fulfilled when the UA Service successfully returns the Web Profile linked to the provided Web Profile ID
 
-### webprofile.addDevice(***PROFILE_ID***, ***PAYLOAD***);
+### webprofile.addDevice(*PROFILE_ID*, *PAYLOAD*);
 
 Add a new, trusted device to the user's Web Profile.
 
@@ -50,7 +50,7 @@ Add a new, trusted device to the user's Web Profile.
 
 ***Promise*** - *Object*: fulfilled when the UA Service successfully adds the device to the Web Profile of the user.
 
-### webprofile.removeDevice(***PROFILE_ID***, ***PAYLOAD***);
+### webprofile.removeDevice(*PROFILE_ID*, *PAYLOAD*);
 
 Remove a device from being able to issue commands and access privileged aspects of a user's Web Profile.
 
@@ -64,7 +64,7 @@ Remove a device from being able to issue commands and access privileged aspects 
 
 ***Promise*** - *Object*: fulfilled when the UA Service successfully adds the device to the Web Profile of the user.
 
-### webprofile.addRelationship(***PROFILE_ID***, ***PAYLOAD***);
+### webprofile.addRelationship(*PROFILE_ID*, *PAYLOAD*);
 
 Add a new entity relationship to the user's Web Profile.
 
@@ -79,7 +79,7 @@ Add a new entity relationship to the user's Web Profile.
 
 ***Promise*** - *Object*: fulfilled when the UA Service successfully adds the device to the Web Profile of the user
 
-### webprofile.removeRelationship(***PROFILE_ID***, ***PAYLOAD***);
+### webprofile.removeRelationship(*PROFILE_ID*, *PAYLOAD*);
 
 Remove an entity from having relationship-granted access to, and presence on, the user's Web Profile.
 
@@ -93,7 +93,7 @@ Remove an entity from having relationship-granted access to, and presence on, th
 
 ***Promise*** - *Object*: fulfilled when the UA Service successfully adds the device to the Web Profile of the user
 
-### webprofile.configureProperty(***PROFILE_ID***, ***PAYLOAD***);
+### webprofile.configureProperty(*PROFILE_ID*, *PAYLOAD*);
 
 Configure various options specific to a Web Profile property.
 
@@ -107,7 +107,7 @@ Configure various options specific to a Web Profile property.
 
 ***Promise*** - *Object*: fulfilled when the UA Service successfully configures the property on the user's Web Profile
 
-### webprofile.setProperty(***PROFILE_ID***, ***PROPERTY***, ***VALUE***);
+### webprofile.setProperty(*PROFILE_ID*, *PROPERTY*, *VALUE*);
 
 Set a property of the user's Web Profile.
 
@@ -120,7 +120,7 @@ Set a property of the user's Web Profile.
 
 ***Promise*** - *Object*: fulfilled when the UA Service successfully updates the property on the user's Web Profile
 
-### webprofile.removeProperty(***PROFILE_ID***, ***PROPERTY***);
+### webprofile.removeProperty(*PROFILE_ID*, *PROPERTY*);
 
 Remove a property from the user's Web Profile.
 
